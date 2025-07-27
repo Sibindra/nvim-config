@@ -5,8 +5,8 @@ vim.g.mapleader = " "
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
 if not vim.uv.fs_stat(lazypath) then
-  local repo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
+    local repo = "https://github.com/folke/lazy.nvim.git"
+    vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
 
 vim.opt.rtp:prepend(lazypath)
@@ -15,15 +15,37 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    lazy = false,
-    branch = "v2.5",
-    import = "nvchad.plugins",
-  },
+    {
+        "NvChad/NvChad",
+        lazy = false,
+        branch = "v2.5",
+        import = "nvchad.plugins",
+    },
 
-  { import = "plugins" },
+    { import = "plugins" },
 }, lazy_config)
+
+require("nvim-treesitter.configs").setup {
+    ensure_installed = {
+        "go", -- Go
+        "typescript", -- TypeScript
+        "tsx", -- TSX (React)
+        "javascript", -- Needed by TS
+        "python", -- Python
+        "sql", -- SQL support
+        "regex", -- Regular expressions
+        "bash", -- Shell scripting
+        "json", -- JSON files
+        "yaml", -- YAML files
+        "toml", -- TOML config files
+        "lua", -- Lua (for Neovim config itself)
+        "markdown", -- Markdown (docs, READMEs)
+        "markdown_inline", -- For inline highlighting in MD
+    },
+    highlight = {
+        enable = true,
+    },
+}
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
@@ -33,5 +55,5 @@ require "options"
 require "autocmds"
 
 vim.schedule(function()
-  require "mappings"
+    require "mappings"
 end)

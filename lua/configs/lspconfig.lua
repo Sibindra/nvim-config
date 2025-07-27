@@ -13,6 +13,7 @@ local servers = {
     "server",
     "ts_ls",
     "bashls",
+    "typos_lsp",
 }
 
 vim.lsp.enable(servers)
