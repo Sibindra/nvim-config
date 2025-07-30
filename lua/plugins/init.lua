@@ -38,4 +38,22 @@ return {
             current_line_blame = true,
         },
     },
+    {
+        "nvim-pack/nvim-spectre",
+        cmd = "Spectre",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("spectre").setup {
+                color_devicons = true,
+                line_sep_start = "┌-----------------------------------------",
+                result_padding = "¦  ",
+                line_sep = "└-----------------------------------------",
+                highlight = {
+                    ui = "String",
+                    search = "DiffChange",
+                    replace = "DiffAdd",
+                },
+            }
+        end,
+    },
 }

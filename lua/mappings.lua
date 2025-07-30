@@ -9,6 +9,12 @@ end, { desc = "Copilot Accept", noremap = true, silent = true })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
+-- Code action
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+
+-- Find refrences
 map("n", "<leader>fr", ":lua vim.lsp.buf.references()<CR>", { desc = "Find References" })
 map("n", "<C-LeftMouse>", ":lua vim.lsp.buf.definition()<CR>", { desc = "Cmd+Click Definition" })
+
+-- Search and replace
+map("n", "<leader>sr", ":Spectre<CR>", { desc = "Search and Replace (Project-Wide)" })
