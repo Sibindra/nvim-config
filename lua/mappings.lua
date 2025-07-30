@@ -37,3 +37,12 @@ map("n", "<leader>dr", ":DiffviewOpen origin/main...HEAD<CR>", { desc = "Diff wi
 map("n", "<leader>df", ":DiffviewOpen origin/main -- %<CR>", { desc = "Diff Current File with Remote" })
 map("n", "<leader>dp", ":DiffviewOpen HEAD^ HEAD<CR>", { desc = "Diff with Previous Commit" })
 map("n", "<leader>dc", ":DiffviewOpen HEAD^ -- %<CR>", { desc = "Diff Current File with Previous Commit" })
+
+-- GitHub PR Review (Octo.nvim)
+map("n", "<leader>pl", ":Octo pr list<CR>", { desc = "List PRs" })
+map("n", "<leader>po", ":Octo pr show ", { desc = "Show PR (e.g., :Octo pr show 123)" })
+map("n", "<leader>pc", ":Octo comment add<CR>", { desc = "Add PR Comment" })
+map("n", "<leader>pa", ":Octo review start<CR>", { desc = "Start PR Review" })
+map("n", "<leader>ps", ":Octo review submit<CR>", { desc = "Submit PR Review" })
+map("n", "<leader>pm", ":Octo pr merge squash<CR>", { desc = "Merge PR (Squash)" })
+map("n", "<leader>pw", ":!gh pr view --web<CR>", { desc = "Open PR in Browser" })

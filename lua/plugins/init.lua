@@ -106,4 +106,58 @@ return {
             }
         end,
     },
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("telescope").setup {
+                defaults = {
+                    mappings = {
+                        i = {
+                            ["<C-j>"] = "move_selection_next",
+                            ["<C-k>"] = "move_selection_previous",
+                        },
+                    },
+                },
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown(),
+                    },
+                },
+            }
+            local status, err = pcall(function()
+                require("telescope").load_extension "octo"
+            end)
+            if not status then
+                vim.notify("Failed to load octo Telescope extension: " .. err, vim.log.levels.ERROR)
+            end
+        end,
+    },
+    {
+        "pwntester/octo.nvim",
+        cmd = { "Octo" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            local ok, octo = pcall(require, "octo")
+            if not ok then
+                vim.notify("Failed to load octo.nvim: " .. octo, vim.log.levels.ERROR)
+                return
+            end
+            octo.setup {
+                suppress_missing_scope = {
+                    projects_v2 = true,
+                },
+                mappings_disable_default = true,
+                default_merge_method = "squash",
+                picker = "telescope",
+                enable_diagnostic = false,
+                use_local_fs = true,
+                default_remote = { "origin", "upstream" },
+            }
+        end,
+    },
 }
