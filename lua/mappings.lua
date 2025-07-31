@@ -26,7 +26,7 @@ map("n", "<leader>gb", ":Gitsigns blame_line<CR>", { desc = "Blame Line" })
 map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle Inline Blame" })
 map("n", "<leader>gn", ":Gitsigns next_hunk<CR>", { desc = "Next Hunk" })
 map("n", "<leader>gp", ":Gitsigns prev_hunk<CR>", { desc = "Previous Hunk" })
-map("n", "<leader>gd", ":Gitsigns diffthis<CR>", { desc = "Diff This File (Index)" })
+map("n", "<leader>gdd", ":Gitsigns diffthis<CR>", { desc = "Diff This File (Index)" })
 map("n", "<leader>gm", ":Gitsigns diffthis origin/main<CR>", { desc = "Diff This File (origin/main)" })
 map("n", "<leader>gh", ":Gitsigns diffthis HEAD^<CR>", { desc = "Diff This File (HEAD^)" })
 
