@@ -9,7 +9,6 @@ local servers = {
     "jsonls",
     "postgres_lsp",
     "gopls",
-    "buf_ls",
     "tailwindcss",
     "docker_compose_language_service",
     "ts_ls",
