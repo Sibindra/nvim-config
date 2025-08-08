@@ -1,0 +1,55 @@
+" Vimrc file for Jetbrains IDE's
+
+" Basic settings
+set hlsearch
+set scrolloff=5
+set ignorecase smartcase
+set showmode
+set history=1000
+set incsearch
+set clipboard+=unnamed
+set relativenumber
+set visualbell
+set showcmd
+set virtualedit=onemore
+
+" Set space as leader
+let mapleader = " "
+
+" File & Explorer
+nmap <leader>ff :action GotoFile<CR>
+
+" Find & Replace
+nmap <leader>fr :action Replace<CR>
+nmap <leader>fR :action ReplaceInPath<CR>
+nmap <leader>/ :action Find<CR>
+
+" Code / Outline / Symbols
+nmap <leader>fm :action ReformatCode<CR>
+nmap <leader>o :action FileStructurePopup<CR>
+
+" Project / Run / Terminal
+nmap <leader>pe :action Run<CR>
+nmap <leader>t :action ActivateTerminalToolWindow<CR>
+
+" Navigation
+nmap <leader>qq :action CloseContent<CR>
+nmap <leader>x :action HideAllWindows<CR>
+
+" Terminal
+nmap <leader>tt :action ActivateTerminalToolWindow<CR>
+
+" Buffer navigation
+nmap <leader>bn :action NextTab<CR>
+nmap <leader>bp :action PreviousTab<CR>
+
+" Clear search highlight
+nnoremap <leader><cr> :nohlsearch<cr>
+
+" Center screen when jumping to next match
+nnoremap n nzz
+nnoremap N Nzz
+
+" Easy window navigation
+map <Tab> :action NextTab<CR>
+map <S-Tab> :action PreviousTab<CR>
