@@ -1,5 +1,3 @@
-" Vimrc file for Jetbrains IDE's
-
 " Basic settings
 set hlsearch
 set scrolloff=5
@@ -17,39 +15,45 @@ set virtualedit=onemore
 let mapleader = " "
 
 " File & Explorer
-nmap <leader>ff :action GotoFile<CR>
+nmap <leader>ff <Action>(GotoFile)<CR>
+nmap <leader>fa <Action>(FindInPath)<CR>
 
 " Find & Replace
-nmap <leader>fr :action Replace<CR>
-nmap <leader>fR :action ReplaceInPath<CR>
-nmap <leader>/ :action Find<CR>
+nmap <leader>ra <Action>(RenameElement)<CR>
+nmap <leader>fr <Action>(Replace)<CR>
+nmap <leader>fR <Action>(ReplaceInPath)<CR>
+nmap <leader>/ <Action>(Find)<CR>
+nmap <leader>fu <Action>(ShowUsages)<CR>
+
+" Search for current visual selection
+vnoremap // y/<C-R>"<CR>
 
 " Code / Outline / Symbols
-nmap <leader>fm :action ReformatCode<CR>
-nmap <leader>o :action FileStructurePopup<CR>
+nmap <leader>fm <Action>(ReformatCode)<CR>
+nmap <leader>o <Action>(FileStructurePopup)<CR>
 
 " Project / Run / Terminal
-nmap <leader>pe :action Run<CR>
-nmap <leader>t :action ActivateTerminalToolWindow<CR>
+nmap <leader>pe <Action>(Run)<CR>
+nmap <leader>t <Action>(ActivateTerminalToolWindow)<CR>
 
 " Navigation
-nmap <leader>qq :action CloseContent<CR>
-nmap <leader>x :action HideAllWindows<CR>
+nmap <leader>qq <Action>(CloseContent)<CR>
+nmap <leader>x <Action>(HideAllWindows)<CR>
 
 " Terminal
-nmap <leader>tt :action ActivateTerminalToolWindow<CR>
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)<CR>
 
 " Buffer navigation
-nmap <leader>bn :action NextTab<CR>
-nmap <leader>bp :action PreviousTab<CR>
+nmap <leader>bn <Action>(NextTab)<CR>
+nmap <leader>bp <Action>(PreviousTab)<CR>
 
 " Clear search highlight
-nnoremap <leader><cr> :nohlsearch<cr>
+nnoremap <leader><CR> :nohlsearch<CR>
 
 " Center screen when jumping to next match
 nnoremap n nzz
 nnoremap N Nzz
 
 " Easy window navigation
-map <Tab> :action NextTab<CR>
-map <S-Tab> :action PreviousTab<CR>
+map <Tab> <Action>(NextTab)<CR>
+map <S-Tab> <Action>(PreviousTab)<CR>
